@@ -24,11 +24,10 @@ class FotMobCoordinator(DataUpdateCoordinator):
     async def _async_update_data(self):
         """Busca partidas ao vivo da API-Football."""
         try:
-            async with aiohttp.ClientSession() as session:
+            async with aiohttp.ClientSession(headers={"User-Agent": "HomeAssistant/1.0"}) as session:
                 async with session.get(API_URL, headers=API_HEADERS) as resp:
                     resp.raise_for_status()
                     data = await resp.json()
-                    # Retorna apenas lista de partidas
                     return data.get("response", [])
         except Exception as e:
             _LOGGER.error("Erro ao buscar partidas: %s", e)
