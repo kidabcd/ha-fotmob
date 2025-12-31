@@ -1,0 +1,9 @@
+{
+  "domain": "fotmob",
+  "name": "FotMob",
+  "version": "1.0.0",
+  "documentation": "https://https://github.com/kidabcd/ha-fotmob",
+  "requirements": [],
+  "codeowners": ["@kidabcd"],
+  "iot_class": "cloud_polling"
+}
