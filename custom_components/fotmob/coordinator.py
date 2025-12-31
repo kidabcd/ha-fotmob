@@ -1,3 +1,5 @@
+print("### FOTMOB COORDINATOR LOCAL CARREGADO ###")
+
 from datetime import timedelta
 import aiohttp
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
