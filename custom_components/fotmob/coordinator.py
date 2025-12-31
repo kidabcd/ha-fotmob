@@ -2,11 +2,16 @@ from datetime import timedelta
 import aiohttp
 from homeassistant.helpers.update_coordinator import DataUpdateCoordinator
 
+import logging
+
+_LOGGER = logging.getLogger(__name__)
+
+
 class FotMobCoordinator(DataUpdateCoordinator):
     def __init__(self, hass):
         super().__init__(
             hass,
-            logger=None,
+            logger=_LOGGER,
             name="FotMob",
             update_interval=timedelta(minutes=1),
         )
